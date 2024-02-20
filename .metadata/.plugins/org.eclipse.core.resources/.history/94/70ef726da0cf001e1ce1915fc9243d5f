@@ -1,0 +1,10 @@
+package ex05.javaconfig;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration //*** 자바파일을 설정파일로 사용함 ***
+public class JavaConfig {
+
+	
+	
+}

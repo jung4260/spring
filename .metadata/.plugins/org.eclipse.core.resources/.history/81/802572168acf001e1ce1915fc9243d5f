@@ -1,0 +1,27 @@
+package ex02;
+
+import java.util.Arrays;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+	
+	public static void main(String[] args) {
+		
+		//IOC컨테이너
+		GenericXmlApplicationContext ctx = 
+				new GenericXmlApplicationContext("application-context.xml");
+		
+		//빈의 이름들 확인
+		String [] arr = ctx.getBeanDefinitionNames();
+		System.out.println(Arrays.toString(arr));
+		
+		//빈을 꺼낼때는, 빈의 이름 or, 빈의 타입을 사용하는 reflect기법을 사용합니다.
+		Hotel h = (Hotel) ctx.getBean("hotel");
+		
+		h.getChef();
+		
+		
+	}
+	
+}

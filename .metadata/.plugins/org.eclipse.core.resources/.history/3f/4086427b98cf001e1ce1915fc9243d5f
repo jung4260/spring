@@ -1,0 +1,33 @@
+package ex04;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Printer {
+	
+	/*
+	 * @Autowired
+	 * 의존객체자동주입 - 타입으로 찾고, 이름으로 찾아서 자동주입
+	 */
+	
+	private Document document;
+	
+	public Printer() {
+		
+	}
+	
+	//주입 => constructor, setter
+	@Autowired
+	public Printer (Document document) {
+		this.document = document;
+	}
+
+	public Document getDocument() {
+		return document;
+	}
+
+	public void setDocument(Document document) {
+		this.document = document;
+	}
+	
+	
+}

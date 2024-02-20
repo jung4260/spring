@@ -1,0 +1,17 @@
+package ex04;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MainClass {
+		
+	public static void main(String[] args) {
+		
+		//
+		AnnotationConfigApplicationContext ctx =
+				new AnnotationConfigApplicationContext("autowired-context.xml");
+		
+		Printer print = ctx.getBean(Printer.class);
+		System.out.println(print.getDocument().data);
+		
+	}
+}
