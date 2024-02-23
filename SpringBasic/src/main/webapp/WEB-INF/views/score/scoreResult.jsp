@@ -10,7 +10,9 @@
 
 	<h3>점수 결과</h3>
 	
-
-
+	<h3>점수가 성공적으로 등록되었습니다!</h3>
+	<a href="scoreRegist">다시 등록하기</a> <br>
+	<a href="scoreList">목록 보기</a> <br>
+	
 </body>
 </html>

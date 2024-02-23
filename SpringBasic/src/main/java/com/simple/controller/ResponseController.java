@@ -32,6 +32,7 @@ public class ResponseController {
 	
 	
 	//ModelAndView - 데이터와 뷰의 정보를 함께 넘기는 방식
+	//ex01페이지에서 ahref=ex02로 넘어가면 ModelAndView에 넣고 mv.addobject에 정보를 넣고 ex02로 다시 데이터를 뿌려준다
 	@RequestMapping("/ex02")
 	public ModelAndView ex02() {
 		
@@ -51,6 +52,8 @@ public class ResponseController {
 //		return "response/ex03";
 //	}
 	
+	//public String ex03(MemberVO vo)은 id=aaa123을 vo로 가지고 넘어 올수 있다.
+	//그때 ModelAttribute(변수)를 통해 vo의 값을 가지고 ex03에 데이터를 뿌려 줄 수 있다.
 	@RequestMapping("/ex03") //vo로 값을 받아서 info이름으로 model을 넘긴다
 	public String ex03(@ModelAttribute("info") MemberVO vo) {
 		System.out.println(vo.toString());

@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Thu Feb 22 17:23:17 KST 2024
+#Fri Feb 23 17:33:39 KST 2024
 org.eclipse.jst.jee.server\:SpringMake=C\:\\Users\\user1\\Desktop\\Spring\\apache-tomcat-9.0.86\\wtpwebapps\\SpringMake
 org.eclipse.jst.jee.server\:SpringBasic=C\:\\Users\\user1\\Desktop\\Spring\\apache-tomcat-9.0.86\\wtpwebapps\\SpringBasic
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\user1\\.m2\\repository\\org\\springframework\\spring-web\\5.0.7.RELEASE\\spring-web-5.0.7.RELEASE.jar=C\:\\Users\\user1\\Desktop\\Spring\\apache-tomcat-9.0.86\\wtpwebapps\\SpringBasic\\WEB-INF\\lib\\spring-web-5.0.7.RELEASE.jar

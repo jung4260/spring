@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- 마이바티스 문법을 사용가능, Namespace속성=인터페이스 풀경로 -->
+  <mapper namespace="com.simple.basic.TestMapper">
+  	
+  	<!-- id는 인터페이스에 정의된 메서드명 -->
+  	<!-- select구절은  resultType으로 반환받을 타입을 지정함-->
+  	<select id="getTime" resultType="string">
+  		select sysdate from dual
+  	</select>
+  	
+  	<!-- parameterType은 전달되는 매개변수 타입(생략가능), string, int, map, 사용자VO -->
+  	<!-- 
+  	 	파라미터 #{매개변수명}으로 받습니다. (단, 하나의 매개변수만 전달가능)
+  	 	만약 여려개를 주고싶다면, 문법이 따로 있습니다.
+  	 -->
+  	<insert id="insertOne" parameterType="string">
+  		insert into score(sno, name) values (score_seq.nextval, #{name} )
+  	</insert>
+  	
+  	<!-- vo나 map타입인 경우, #{getter} -->
+  	<insert id="insertTwo" parameterType="com.simple.command.ScoreVO">
+  		insert into score values(score_seq.nextval, #{name}, #{kor}, #{eng}, #{math} )
+  	</insert>
+  	
+  	<insert id="insertFour" parameterType="map">
+  		insert into score values(score_seq.nextval, #{name}, #{kor}, #{eng}, #{math} )
+  	</insert>
+  	
+  	<insert id="insertThree">
+  		insert into score (sno, name, kor) values(score_seq.nextval, #{name}, #{Korean} )
+  	</insert>
+  	
+  	<!-- select는 resultType필수 (vo인 경우 풀 경로를 적습니다) -->
+  	<select id="selectOne" parameterType="int" resultType="com.simple.command.ScoreVO">
+  		select * from score where sno = #{sno}
+  	</select>
+  	
+  	<select id="selectTwo" resultType="map">
+  		select * from score where sno = #{sno}
+  	</select>
+  	
+  	<select id="selectThree" resultType="com.simple.command.ScoreVO">
+  		select * from score
+  	</select>
+  
+  	<select id="selectFour" resultType="map">
+  		select * from score
+  	</select>
+  	
+  	<update id="updateOne" parameterType="com.simple.command.ScoreVO">
+  		update score 
+  		set 
+	  		math=#{math}, 
+	  		name=#{name}, 
+	  		kor=#{kor}, 
+	  		eng=#{eng}
+  		where sno = #{sno}
+  	</update>
+  	
+  	<delete id="deleteOne" parameterType="int">
+  		delete from score where sno = #{sno}
+  	</delete>
+  
+  </mapper>

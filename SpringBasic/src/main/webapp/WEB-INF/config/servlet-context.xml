@@ -23,10 +23,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<!-- Score서비스 bean 등록 -->
-	<!-- 
+	<!-- Score서비스 bean 등록 --> 
 	<beans:bean id="service" class="com.simple.service.ScoreServcieImpl" />
-	 -->
+	 
 	
 	
 </beans:beans>
